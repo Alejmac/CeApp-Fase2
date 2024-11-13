@@ -2,8 +2,8 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import os
-from kivy.utils import platform
-from plyer import storagepath
+#from kivy.utils import platform
+#from plyer import storagepath
 from unidecode import unidecode
 
 
@@ -220,12 +220,16 @@ def get_schedule(sesion):
 
     return horario_final
 
+import os
+import json
+import requests
+from bs4 import BeautifulSoup
+from unidecode import unidecode
+
 def get_student(sesion):
-    # URLs de login y home
     url_home = 'https://ase1.ceti.mx/tecnologo/tgoalumno/tiras'
 
     try:
-        # Obtener la página de tiras de materias
         response_home = sesion.get(url_home)
         response_home.raise_for_status()
     except requests.RequestException as e:
@@ -234,7 +238,6 @@ def get_student(sesion):
 
     soup = BeautifulSoup(response_home.content, 'html.parser')
 
-    # Buscar la tabla de tiras de materias
     materias_table = soup.find('table', {'class': 'tabla'})
     if materias_table is None:
         raise ValueError("No se encontró ninguna tabla con los atributos especificados en el documento HTML.")
@@ -247,33 +250,24 @@ def get_student(sesion):
     etiquetas_td = soup.find_all(['td', 'th'], {'class': ['gris', 'rojo'], 'colspan': False})
 
     def clean_key(key):
-        # Quitar acentos de la clave
         key_without_accents = unidecode(key)
-        # Reemplazar los dos puntos con otro carácter (por ejemplo, guion bajo)
         key_cleaned = key_without_accents.replace(':', '')
         key_cleaned = key_cleaned.replace('del', '')
         key_cleaned = key_cleaned.replace('de', '')
         key_cleaned = key_cleaned.replace(' ', '')
         return key_cleaned
 
-    # Crear un diccionario para almacenar los datos limpios en las claves
     data_cleaned = {}
     count = 0
 
-    # Iterar sobre las claves originales y sus valores, limitando a los primeros 25
     for k, v in zip(etiquetas_td_k, etiquetas_td):
-        # Limpiar la clave y agregar al diccionario
         key_cleaned = clean_key(k.text.strip())
         data_cleaned[key_cleaned] = v.text.strip()
         count += 1
         if count == 25:
             break
 
-    # Guardar el diccionario limpio en un archivo JSON en la carpeta 'Data'
-    if platform == 'android' or platform == 'ios':
-        data_folder = storagepath.get_documents_dir()
-    else:
-        data_folder = os.path.join(os.getcwd(), 'Data')
+    data_folder = os.path.join(os.getcwd(), 'Data')
 
     os.makedirs(data_folder, exist_ok=True)
     json_file_path = os.path.join(data_folder, 'data_cleaned.json')
@@ -285,12 +279,8 @@ def get_student(sesion):
     return data_cleaned
 
 def save_file(data, file_name):
-    """Guarda los datos en un archivo JSON."""
-    if platform == 'android' or platform == 'ios':
-        data_folder = storagepath.get_documents_dir()
-    else:
-        data_folder = os.path.join(os.getcwd(), 'Data')
-
+    
+    data_folder = os.path.join(os.getcwd(), 'Data')
     os.makedirs(data_folder, exist_ok=True)
     json_file_path = os.path.join(data_folder, file_name)
 
@@ -298,4 +288,3 @@ def save_file(data, file_name):
         json.dump(data, file, ensure_ascii=False, indent=2)
 
     print(f"Extracción y guardado completados con éxito en {json_file_path}.")
- 
