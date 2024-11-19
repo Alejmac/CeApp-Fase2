@@ -48,10 +48,10 @@ def DataStudentView(page: Page):
                     content=Icon(
                         name=icons.PERSON,
                         size=50,
-                        color=ft.colors.BLACK,
+                        color=ft.colors.WHITE,
                     ),
-                    height=90,
-                    bgcolor=ft.colors.GREY,
+                    height=100,
+                    bgcolor='#E68F59',
                     alignment=ft.alignment.center,
                     border_radius=ft.border_radius.all(0),  # Bordes redondeados
                 ),
@@ -75,9 +75,9 @@ def DataStudentView(page: Page):
                         ],
                         spacing=5
                     ),
-                    bgcolor=ft.colors.BLUE,
+                    bgcolor='#1A74AF',
                     padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=20, left=5, right=70),   
+                    margin=ft.margin.only(top=20, left=30, right=30),   
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10)  
                 ),
@@ -91,9 +91,9 @@ def DataStudentView(page: Page):
                         ],
                         spacing=5
                     ),
-                    bgcolor=ft.colors.WHITE,
+                    bgcolor='#A1D8EC',
                     padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=10, left=70, right=10),   
+                    margin=ft.margin.only(top=6, left=30, right=30),   
                     alignment=ft.alignment.center_right,
                     border_radius=ft.border_radius.all(10)   
                 ),
@@ -106,9 +106,9 @@ def DataStudentView(page: Page):
                         ],
                         spacing=5
                     ),
-                    bgcolor=ft.colors.BLUE,
+                    bgcolor='#1A74AF',
                     padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=10, left=10, right=70),   
+                    margin=ft.margin.only(top=6, left=30, right=30),   
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10)   
                 ),
@@ -121,9 +121,9 @@ def DataStudentView(page: Page):
                         ],
                         spacing=5
                     ),
-                    bgcolor=ft.colors.WHITE,
+                    bgcolor='#A1D8EC',
                     padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=10,  left=70, right=10),  
+                    margin=ft.margin.only(top=6,  left=30, right=30 , bottom=20),  
                     alignment=ft.alignment.center_right,
                     border_radius=ft.border_radius.all(10)   
                 ),
@@ -139,7 +139,7 @@ def DataStudentView(page: Page):
     )        
     #page.add(main_container)
     #page.add(nav_bar)  
-    return View("/data_student", [main_container],bgcolor="#F1DEC6",padding=0, spacing=0, appbar=nav_bar)
+    return View("/data_student", [main_container],bgcolor="white",padding=0, spacing=0, appbar=nav_bar)
 
 if __name__ == "__main__":
     ft.app(target=DataStudentView)

@@ -17,7 +17,7 @@ def create_nav_top(page):
     # Crear el texto con el título "CeApp"
     title_text = Text(
         "CeApp",
-        size=24,
+        size=27,
         weight="bold",
         color=colors.WHITE,
         font_family="DM Serif Display"  # Cambiar el estilo de letra
@@ -32,7 +32,7 @@ def create_nav_top(page):
             ],
             alignment="spaceBetween"
         ),
-        bgcolor="#4158A6",
+        bgcolor="#08406F",
         padding=ft.padding.all(10),
         alignment=ft.alignment.center
     )
