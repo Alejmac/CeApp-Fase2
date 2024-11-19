@@ -106,7 +106,7 @@ def ScheduleView(page: ft.Page):
     # Envolver las pestañas en un contenedor con fondo naranja
     tabs_container = Container(
         content=tabs,
-        bgcolor=ft.colors.ORANGE,
+        bgcolor="#E68F59",
         border_radius=ft.border_radius.all(10),  # Bordes redondeados
         padding=ft.padding.all(5),
         margin=ft.margin.only(bottom=40),  # Padding opcional
@@ -118,7 +118,7 @@ def ScheduleView(page: ft.Page):
         content=ft.Column(
             controls=[nav_top,
                 Container(
-                    content=Text("Horario", size=24, weight="bold", color=ft.colors.BLUE),
+                    content=Text("Horario", size=24, weight="bold", color=ft.colors.BLACK),
                     alignment=ft.alignment.center,
                     margin=ft.margin.only(top=20 , bottom=30)
                 ),
@@ -136,6 +136,6 @@ def ScheduleView(page: ft.Page):
     )
 
     page.update()
-    return View("/schedule", [main_container],bgcolor="#F1DEC6",padding=0, spacing=0, appbar=nav_bar)
+    return View("/schedule", [main_container],bgcolor="white",padding=0, spacing=0, appbar=nav_bar)
  #if __name__ == "__main__":
  #   ft.app(target=ScheduleView)
