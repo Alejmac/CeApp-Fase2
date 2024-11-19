@@ -15,25 +15,25 @@ def create_collection_container(materia, primer_parcial, segundo_parcial, tercer
             content=Text(f"{primer_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
             padding=ft.padding.all(15),   
             bgcolor=ft.colors.WHITE,   
-            border=ft.border.all(1, ft.colors.BLACK),
             alignment=ft.alignment.center,   
-            border_radius=ft.border_radius.all(8)   
+            border_radius=ft.border_radius.all(8),
+            margin=ft.margin.only(bottom=18)    
         ),
         Container(
             content=Text(f"{segundo_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
             padding=ft.padding.all(15),  # Hacer el triple de grande
             bgcolor=ft.colors.WHITE,  # Fondo blanco
-            border=ft.border.all(1, ft.colors.BLACK),
             alignment=ft.alignment.center,  # Centrar el contenido
-            border_radius=ft.border_radius.all(8)  # Redondeo de 8px
+            border_radius=ft.border_radius.all(8),  # Redondeo de 8px
+            margin=ft.margin.only(bottom=18) 
         ),
         Container(
             content=Text(f"{tercer_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
             padding=ft.padding.all(15),   
             bgcolor=ft.colors.WHITE,  
-            border=ft.border.all(1, ft.colors.BLACK),
             alignment=ft.alignment.center,   
-            border_radius=ft.border_radius.all(8)   
+            border_radius=ft.border_radius.all(8),
+            margin=ft.margin.only(bottom=18)
         )
     ]
 
@@ -63,12 +63,12 @@ def create_collection_container(materia, primer_parcial, segundo_parcial, tercer
             alignment=ft.MainAxisAlignment.CENTER,
             spacing=0  # Sin separación entre los contenedores
         ),
-        padding=ft.padding.all(0),  # Sin padding
-        border=ft.border.all(1, ft.colors.BLACK),
-        border_radius=ft.border_radius.all(8),  # Redondeo de 8px
-        margin=ft.margin.all(0),  # Sin margen
+        padding=ft.padding.all(0),   
+        #border=ft.border.all(1, ft.colors.BLACK),
+        #border_radius=ft.border_radius.all(8),  
+        margin=ft.margin.all(0),   
         bgcolor=bgcolor,
-            # Fondo gris claro o más oscuro
+             
     )
 
     return collection_container
@@ -118,10 +118,10 @@ def QualificationsView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Calificaciones", size=24, weight="bold", color=ft.colors.BLUE),  # Título principal con estilo
+                    content=Text("Calificaciones", size=24, weight="bold", color=ft.colors.BLACK),  # Título principal con estilo
                     alignment=ft.alignment.center,  # Centrar el título
                     padding=ft.padding.all(10),  # Padding alrededor del título
-                    margin=ft.margin.only(bottom=30)  # Separación inferior de 30px
+                    margin=ft.margin.only( top=25 , bottom=30)  # Separación inferior de 30px
                 ),
                 collection_column  # Agregar el Column con los contenedores de las colecciones
             ],
