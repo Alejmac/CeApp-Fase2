@@ -24,7 +24,7 @@ def main(page: Page):
             "/first": lambda: FirstView(page)
         }
         
-        view_function = routes.get(page.route, routes["/first"])
+        view_function = routes.get(page.route, routes["/qualifications"])
         page.views.append(view_function())   
  
         page.update()

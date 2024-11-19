@@ -54,7 +54,8 @@ def LoginView(page: Page):
         width=280,
         height=100,
         hint_text="Registro",
-        border=10,
+        border=7,
+        bgcolor=ft.colors.WHITE,
         border_radius=20,
         color="black",
         prefix_icon=ft.icons.EMAIL
@@ -64,7 +65,8 @@ def LoginView(page: Page):
         width=280,
         height=100,
         hint_text="Contraseña",
-        border=10,
+        border=7,
+        bgcolor=ft.colors.WHITE,
         border_radius=20,
         color="black",
         prefix_icon=ft.icons.LOCK,
@@ -91,7 +93,7 @@ def LoginView(page: Page):
                     width=320,
                     size=30,
                     text_align='center',
-                    color="black",
+                    color="white",
                     weight="w900"
                 ),
                 padding=ft.padding.only(20, 20)
@@ -117,7 +119,7 @@ def LoginView(page: Page):
                 ElevatedButton(
                     text="INICIAR",
                     width=280,
-                    bgcolor="#FF8343",
+                    bgcolor="#08406F",
                     on_click=lambda e: on_login_click(page, registro_field, password_field)
                 ),
                 padding=ft.padding.only(20, 20)
@@ -128,7 +130,8 @@ def LoginView(page: Page):
         border_radius=30,
         width=320,
         height=500,
-        bgcolor=ft.colors.WHITE,
+        bgcolor='#E68F59',
+        #bgcolor=ft.colors.WHITE,
         shadow=ft.BoxShadow(
             spread_radius=18,
             blur_radius=15,
@@ -138,6 +141,6 @@ def LoginView(page: Page):
         margin=ft.margin.only(top=-120)  
     )
 
-
-    return ft.View("/login", [image_container, login_container], bgcolor=ft.colors.ORANGE_50,vertical_alignment = 'start',horizontal_alignment = "center")
+    # bgcolor=ft.colors.ORANGE_50
+    return ft.View("/login", [image_container, login_container],bgcolor=ft.colors.WHITE,vertical_alignment = 'start',horizontal_alignment = "center")
 
