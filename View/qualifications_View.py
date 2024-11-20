@@ -7,38 +7,38 @@ import os
 
 def create_collection_container(materia, primer_parcial, segundo_parcial, tercer_parcial, collection, index):
     # Crear el subtítulo con el valor de la clave "materia"
-    subtitle = Text(f"{materia}", size=12, weight="bold", color=ft.colors.BLACK)  # Reducir el tamaño del texto
+    subtitle = Text(f"{materia}", size=12, weight="bold", color=ft.colors.WHITE)  # Reducir el tamaño del texto
 
     # Crear los subcontenedores con la información de los parciales
     subcontainers = [
         Container(
             content=Text(f"{primer_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
-            padding=ft.padding.all(15),  # Hacer el triple de grande
-            bgcolor=ft.colors.WHITE,  # Fondo blanco
-            border=ft.border.all(1, ft.colors.BLACK),
-            alignment=ft.alignment.center,  # Centrar el contenido
-            border_radius=ft.border_radius.all(8)  # Redondeo de 8px
+            padding=ft.padding.all(15),   
+            bgcolor=ft.colors.WHITE,   
+            alignment=ft.alignment.center,   
+            border_radius=ft.border_radius.all(8),
+            margin=ft.margin.only(bottom=18)    
         ),
         Container(
             content=Text(f"{segundo_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
             padding=ft.padding.all(15),  # Hacer el triple de grande
             bgcolor=ft.colors.WHITE,  # Fondo blanco
-            border=ft.border.all(1, ft.colors.BLACK),
             alignment=ft.alignment.center,  # Centrar el contenido
-            border_radius=ft.border_radius.all(8)  # Redondeo de 8px
+            border_radius=ft.border_radius.all(8),  # Redondeo de 8px
+            margin=ft.margin.only(bottom=18) 
         ),
         Container(
             content=Text(f"{tercer_parcial}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
-            padding=ft.padding.all(15),  # Hacer el triple de grande
-            bgcolor=ft.colors.WHITE,  # Fondo blanco
-            border=ft.border.all(1, ft.colors.BLACK),
-            alignment=ft.alignment.center,  # Centrar el contenido
-            border_radius=ft.border_radius.all(8)  # Redondeo de 8px
+            padding=ft.padding.all(15),   
+            bgcolor=ft.colors.WHITE,  
+            alignment=ft.alignment.center,   
+            border_radius=ft.border_radius.all(8),
+            margin=ft.margin.only(bottom=18)
         )
     ]
 
     # Determinar el color de fondo del contenedor principal
-    bgcolor = ft.colors.GREY_200 if index % 2 == 0 else ft.colors.GREY
+    bgcolor ='#E68F59' if index % 2 == 0 else "#1A74AF"
 
     # Crear un contenedor para la colección
     collection_container = Container(
@@ -63,12 +63,12 @@ def create_collection_container(materia, primer_parcial, segundo_parcial, tercer
             alignment=ft.MainAxisAlignment.CENTER,
             spacing=0  # Sin separación entre los contenedores
         ),
-        padding=ft.padding.all(0),  # Sin padding
-        border=ft.border.all(1, ft.colors.BLACK),
-        border_radius=ft.border_radius.all(8),  # Redondeo de 8px
-        margin=ft.margin.all(0),  # Sin margen
+        padding=ft.padding.all(0),   
+        #border=ft.border.all(1, ft.colors.BLACK),
+        #border_radius=ft.border_radius.all(8),  
+        margin=ft.margin.all(0),   
         bgcolor=bgcolor,
-            # Fondo gris claro o más oscuro
+             
     )
 
     return collection_container
@@ -79,8 +79,8 @@ def QualificationsView(page: Page):
     page.bgcolor = "#F1DEC6"  # Cambiar el color de fondo de la página
 
     # Ajustar el tamaño de la ventana a la resolución del iPhone 15
-    #page.window.width = 390
-    #page.window.height = 844
+    page.window.width = 390
+    page.window.height = 844
 
     # Crear la barra de navegación superior
     nav_top = create_nav_top(page)
@@ -118,10 +118,10 @@ def QualificationsView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Calificaciones", size=24, weight="bold", color=ft.colors.BLUE),  # Título principal con estilo
+                    content=Text("Calificaciones", size=24, weight="bold", color=ft.colors.BLACK),  # Título principal con estilo
                     alignment=ft.alignment.center,  # Centrar el título
                     padding=ft.padding.all(10),  # Padding alrededor del título
-                    margin=ft.margin.only(bottom=30)  # Separación inferior de 30px
+                    margin=ft.margin.only( top=25 , bottom=30)  # Separación inferior de 30px
                 ),
                 collection_column  # Agregar el Column con los contenedores de las colecciones
             ],
@@ -136,7 +136,7 @@ def QualificationsView(page: Page):
 
     #page.add(main_container)
     page.update()
-    return View("/qualifications", [main_container], bgcolor="#F1DEC6", padding=0, spacing=0, appbar=nav_bar)
+    return View("/qualifications", [main_container], bgcolor="white", padding=0, spacing=0, appbar=nav_bar)
 
 #if __name__ == "__main__":
 #    ft.app(target=QualificationsView)

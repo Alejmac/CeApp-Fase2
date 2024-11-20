@@ -133,6 +133,7 @@ def TeachersView(page: ft.Page):
 
     # Crear los botones para cada materia
     buttons = []
+    
     for profesor, items in datos_profesores.items():
         for materia in items['materias']:
             print(f"Creando botón para materia: {materia['nombre']} del profesor: {profesor}")  # Agregar declaración de impresión
@@ -141,8 +142,8 @@ def TeachersView(page: ft.Page):
                     text=materia['nombre'],
                     on_click=lambda e, profesor=profesor, items=items: show_bottom_sheet(page, items),
                     style=ft.ButtonStyle(
-                        bgcolor=ft.colors.WHITE,
-                        color=ft.colors.BLACK,
+                        bgcolor='#E68F59',
+                        color=ft.colors.WHITE,
                         padding=ft.padding.all(15),
                         elevation=20,
                         text_style=ft.TextStyle(
@@ -176,7 +177,7 @@ def TeachersView(page: ft.Page):
             "Materias",
             size=30,
             weight="bold",
-            color=ft.colors.ORANGE_300,
+            color=ft.colors.BLACK,
             font_family="DM Serif Display",  # Cambiar el estilo de letra
             #decoration=ft.TextDecoration.UNDERLINE  # Remarcar en negro
         ),
@@ -203,7 +204,7 @@ def TeachersView(page: ft.Page):
         
     )
     page.update()
-    return View("/teachers", [main_container], bgcolor="#F1DEC6", padding=0, spacing=0, appbar=nav_bar)
+    return View("/teachers", [main_container], bgcolor="white", padding=0, spacing=0, appbar=nav_bar)
     #page.add(main_container)
     
 #if __name__ == "__main__":
