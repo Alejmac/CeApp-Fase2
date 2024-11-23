@@ -1,26 +1,49 @@
 import flet as ft
-from flet import Container, IconButton, Text, Row, icons, colors
+from flet import Container, PopupMenuButton, PopupMenuItem, Text, Row, icons, colors
 
 def create_nav_top(page):
-    # Función para manejar el clic en el botón de perfil
-    def on_profile_click(e):
-        print("se presionó")
-
-    # Crear el botón de icono
-    icon_button = IconButton(
-        icon=icons.PERM_IDENTITY_OUTLINED,
-        #on_click=on_profile_click,
-        on_click=lambda _: page.go("/data_student"),
-        icon_color=colors.WHITE
+    title_text = Text(
+  spans=[
+                ft.TextSpan(
+                    "CeApp",
+                    ft.TextStyle(
+                        size=29,
+                        weight=ft.FontWeight.NORMAL,
+                        foreground=ft.Paint(
+                            gradient=ft.PaintLinearGradient(
+                                (0, 20), (150, 20), [ft.colors.ORANGE, ft.colors.WHITE]
+                            )
+                        ),
+                    ),
+                ),
+            ],
     )
 
-    # Crear el texto con el título "CeApp"
-    title_text = Text(
-        "CeApp",
-        size=27,
-        weight="bold",
-        color=colors.WHITE,
-        font_family="DM Serif Display"  # Cambiar el estilo de letra
+    # Crear el NavigationDrawer
+    navigation_drawer = ft.NavigationDrawer(
+        on_dismiss=lambda e: page.add(ft.Text("Drawer dismissed")),
+        on_change=lambda e: handle_navigation_change(e, page),
+        controls=[
+            ft.NavigationDrawerDestination(icon=ft.icons.PERSON, label="Data Alumno"),
+            ft.NavigationDrawerDestination(icon=ft.icons.EXIT_TO_APP, label="Salir"),
+        ],
+    )
+
+    page.navigation_drawer = navigation_drawer
+
+    # Función  en el NavigationDrawer
+    def handle_navigation_change(e, page):
+        if e.control.selected_index == 0:
+            page.go("/data_alumno")
+        elif e.control.selected_index == 1:
+            page.go("/salir")
+
+    # Crear el PopupMenuButton
+    popup_menu_button = PopupMenuButton(
+        items=[
+            PopupMenuItem(icon=ft.icons.PERSON,text="Datos del Alumno", on_click=lambda _: page.go("/data_student")),
+            PopupMenuItem(icon=ft.icons.EXIT_TO_APP,text="Salir", on_click=lambda _: page.go("/login")),
+        ]
     )
 
     # Crear el contenedor
@@ -28,7 +51,7 @@ def create_nav_top(page):
         content=Row(
             controls=[
                 title_text,
-                icon_button
+                popup_menu_button
             ],
             alignment="spaceBetween"
         ),

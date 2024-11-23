@@ -6,6 +6,7 @@ from View.qualifications_View import QualificationsView
 from View.data_student_View import DataStudentView
 from View.first import FirstView
 from View.login_View import LoginView
+from View.nav_bar_View import create_nav_bar
 
 
 def main(page: Page):
@@ -24,7 +25,7 @@ def main(page: Page):
             "/first": lambda: FirstView(page)
         }
         
-        view_function = routes.get(page.route, routes["/data_student"])
+        view_function = routes.get(page.route, routes["/qualifications"])
         page.views.append(view_function())   
  
         page.update()
@@ -37,5 +38,5 @@ def main(page: Page):
     page.on_route_change = route_change
     page.on_view_pop = view_pop
     page.go(page.route)
-
+    
 ft.app(target=main)

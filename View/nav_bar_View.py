@@ -5,12 +5,12 @@ def create_nav_bar(page):
     nav_bar = CupertinoNavigationBar(
         bgcolor=ft.colors.BLACK,
         inactive_color=ft.colors.GREY,
-       # active_color=ft.colors.RED,
+       #active_color=ft.colors.RED,
         on_change=lambda e: handle_navigation(page, e.control.selected_index),
         destinations=[
-            NavigationBarDestination(icon=icons.SCHEDULE, label="schedule"),
-            NavigationBarDestination(icon=icons.PEOPLE, label="qualifications"),
-            NavigationBarDestination(icon=icons.CALENDAR_VIEW_DAY, label="teachers"),
+            NavigationBarDestination(icon=icons.SCHEDULE, label="Horario"),
+            NavigationBarDestination(icon=icons.CALENDAR_VIEW_DAY, label="Calificaciones"),
+            NavigationBarDestination(icon=icons.PEOPLE, label="Materias"),
         ]
     )
     return nav_bar
