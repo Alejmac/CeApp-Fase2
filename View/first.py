@@ -6,8 +6,8 @@ import os
 image_path = os.path.join(os.getcwd(), "assets", "entrada1.png")
 
 def FirstView(page: Page):
-    page.window.width = 390
-    page.window.height = 844
+    #page.window.width = 390
+    #page.window.height = 844
     page.title = "Explora la Nueva App"
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
@@ -25,9 +25,9 @@ def FirstView(page: Page):
             [
                 Image(
                     src=image_path,
-                    fit=ft.ImageFit.CONTAIN,
-                    width=page.width,
-                    height=page.height
+                    fit=ft.ImageFit.COVER,
+                    width=page.window.width,
+                    height=page.window.height
                 ),
                 Container(
                     content=None,

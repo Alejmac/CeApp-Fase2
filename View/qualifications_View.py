@@ -137,6 +137,3 @@ def QualificationsView(page: Page):
     #page.add(main_container)
     page.update()
     return View("/qualifications", [main_container], bgcolor="white", padding=0, spacing=0, appbar=nav_bar)
-
-#if __name__ == "__main__":
-#    ft.app(target=QualificationsView)
