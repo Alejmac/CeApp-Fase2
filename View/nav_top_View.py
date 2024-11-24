@@ -56,7 +56,7 @@ def create_nav_top(page):
             alignment="spaceBetween"
         ),
         bgcolor="#08406F",
-        height=90,
+        height=104,
         padding=ft.padding.all(10),
         alignment=ft.alignment.center,
         border=ft.border.all(0.2, ft.colors.GREY,)  # Agregar borde
