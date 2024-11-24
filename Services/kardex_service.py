@@ -79,9 +79,9 @@ def parse_kardex(session):
 
     return kardex_data
 
-session = get_session()
+# session = get_session()
 
-kardex_data = parse_kardex(session)
+# kardex_data = parse_kardex(session)
 
-import pprint
-pprint.pprint(kardex_data)
+# import pprint
+# pprint.pprint(kardex_data)
