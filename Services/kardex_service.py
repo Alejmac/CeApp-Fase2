@@ -6,8 +6,8 @@ def get_session():
     url = "https://ase1.ceti.mx/tecnologo/seguridad/iniciarsesion"
     session = requests.Session()
 
-    # session.post(url, data={'registro':21110191,'password':'123asdzX'})
-    session.post(url, data={'registro':21110417,'password':'castillogutierrez'})
+    session.post(url, data={'registro':21110191,'password':'123asdzX'})
+    # session.post(url, data={'registro':21110417,'password':'castillogutierrez'})
     return session
 
 def get_kardex(session):
@@ -79,11 +79,9 @@ def parse_kardex(session):
 
     return kardex_data
 
-# session = get_session()
-# kardex = get_kardex(session)
+session = get_session()
 
-# # Procesar el HTML
-# kardex_data = parse_kardex(kardex)
+kardex_data = parse_kardex(session)
 
-# import pprint
-# pprint.pprint(kardex_data)
+import pprint
+pprint.pprint(kardex_data)
