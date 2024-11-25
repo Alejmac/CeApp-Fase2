@@ -31,3 +31,12 @@ class LoginViewModel:
             return True
         else:
             return False
+        
+    def save_checkbox_state(self, state):
+        data_folder = os.path.join(os.getcwd(), "Data")
+        if not os.path.exists(data_folder):
+            os.makedirs(data_folder)
+        
+        file_path = os.path.join(data_folder, "active.json")
+        with open(file_path, 'w') as file:
+            json.dump({"active": state}, file)

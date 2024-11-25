@@ -73,6 +73,11 @@ async def on_login_click(e, page, registro_field, password_field):
     alert.open = True
     page.update()
 
+def print_checkbox_state(e):
+    login_view_model = LoginViewModel(main_instance=None)
+    login_view_model.save_checkbox_state(e.control.value)
+    print(e.control.value)
+
 def close_alert(page, alert, success):
     alert.open = False
     page.update()
@@ -84,16 +89,13 @@ def LoginView(page: Page):
     page.window.width = 390
     page.window.height = 844
 
-    page.vertical_alignment = 'start'
-    page.horizontal_alignment = "center"
-
     registro_field = TextField(
         width=280,
         height=100,
         hint_text="Registro",
         border=7,
         bgcolor=ft.colors.WHITE,
-        border_radius=20,
+        border_radius=15,
         color="black",
         prefix_icon=ft.icons.EMAIL
     )
@@ -104,7 +106,7 @@ def LoginView(page: Page):
         hint_text="Contraseña",
         border=7,
         bgcolor=ft.colors.WHITE,
-        border_radius=20,
+        border_radius=15,
         color="black",
         prefix_icon=ft.icons.LOCK,
         password=True
@@ -118,7 +120,7 @@ def LoginView(page: Page):
             height=100
         ),
         border_radius=ft.border_radius.only(bottom_left=60),
-        width=page.width,
+        width=page.window.width,
         height=250
     )
 
@@ -131,7 +133,7 @@ def LoginView(page: Page):
                     size=30,
                     text_align='center',
                     color="white",
-                    weight="w900"
+                    weight="900"
                 ),
                 padding=ft.padding.only(20, 20)
             ),
@@ -148,7 +150,8 @@ def LoginView(page: Page):
                     label="Recordar Contraseña",
                     check_color="black",
                     fill_color="white",
-                    label_style=ft.TextStyle(color="black")
+                    label_style=ft.TextStyle(color="black"),
+                    on_change=print_checkbox_state
                 ),
                 padding=ft.padding.only(80)
             ),
@@ -156,6 +159,7 @@ def LoginView(page: Page):
                 ElevatedButton(
                     text="INICIAR",
                     width=280,
+                    color="white",
                     bgcolor="#08406F",
                     on_click=lambda e: asyncio.run(on_login_click(e, page, registro_field, password_field))
                 ),

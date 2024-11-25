@@ -89,18 +89,5 @@
     "primer_parcial": "20",
     "segundo_parcial": "35",
     "tercer_parcial": "45"
-  },
-  {
-    "clave": "19SCEAMCC04",
-    "nombre": "INNOVACIÓN Y HABILIDADES EMPRENDEDORAS",
-    "division": "CST",
-    "profesor": "HUERTA FRANCO MARIA DEL CORAZON DE JESUS",
-    "correo": "mhuerta@ceti.mx",
-    "grupo": "7K",
-    "tipo": "I",
-    "tipo_pond": "Pendiente de Actualizar",
-    "primer_parcial": null,
-    "segundo_parcial": null,
-    "tercer_parcial": null
   }
 ]
