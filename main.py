@@ -7,6 +7,7 @@ from View.data_student_View import DataStudentView
 from View.first import FirstView
 from View.login_View import LoginView
 from View.nav_bar_View import create_nav_bar
+from View.average_View import AverageView
 
 
 def main(page: Page):
@@ -22,10 +23,11 @@ def main(page: Page):
             "/qualifications": lambda: QualificationsView(page),
             "/data_student": lambda: DataStudentView(page),
             "/login": lambda: LoginView(page),
-            "/first": lambda: FirstView(page)
+            "/first": lambda: FirstView(page),
+            "/average": lambda: AverageView(page),
         }
         
-        view_function = routes.get(page.route, routes["/first"])           
+        view_function = routes.get(page.route, routes["/average"])           
         page.views.append(view_function())   
  
         page.update()
