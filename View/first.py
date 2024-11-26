@@ -1,5 +1,5 @@
 import flet as ft
-from flet import Page, Image, Container, Stack, Column, Text, IconButton, alignment, colors, LinearGradient, FontWeight, TextAlign, MainAxisAlignment, CrossAxisAlignment, padding, margin
+from flet import Page, Image, Container, Stack, Column, Text, IconButton, alignment, colors, FontWeight, TextAlign, MainAxisAlignment, CrossAxisAlignment, padding, margin
 import os
 
 # Construir la ruta de la imagen
@@ -19,7 +19,7 @@ def FirstView(page: Page):
     else:
         print(f"Imagen encontrada: {image_path}")
 
-    # Contenedor de la imagen con degradado
+    # Contenedor de la imagen sin degradado
     image_container = Container(
         content=Stack(
             [
@@ -28,16 +28,6 @@ def FirstView(page: Page):
                     fit=ft.ImageFit.COVER,
                     width=page.window.width,
                     height=page.window.height
-                ),
-                Container(
-                    content=None,
-                    gradient=LinearGradient(
-                        begin=alignment.top_center,
-                        end=alignment.bottom_center,
-                        colors=[colors.TRANSPARENT, colors.BLACK]
-                    ),
-                    width=page.width,
-                    height=page.height
                 ),
                 Container(
                     content=Column(

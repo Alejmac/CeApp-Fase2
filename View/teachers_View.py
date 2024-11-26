@@ -1,18 +1,17 @@
 import flet as ft
 from flet import Page, Column, Text, Container, ElevatedButton, BottomSheet, ScrollMode, View
 from View.nav_top_View import create_nav_top
-from View.nav_bar_View import create_nav_bar  # Importar la función create_nav_bar
-from ViewModel.teacher_ViewModel import TeacherViewModel  # Importar la clase TeacherViewModel
+from View.nav_bar_View import create_nav_bar 
+from ViewModel.teacher_ViewModel import TeacherViewModel  
 import os
 
 def create_data_table(items):
-    # Crear las columnas del DataTable
+
     columns = [
         ft.DataColumn(ft.Text("Campo", color=ft.colors.BLACK)),
         ft.DataColumn(ft.Text("__________________________________", color=ft.colors.BLACK))
     ]
 
-    # Crear las filas del DataTable
     rows = []
     for materia in items['materias']:
         rows.extend([
@@ -72,13 +71,13 @@ def create_data_table(items):
             )
         ])
 
-    # Crear el DataTable
+
     data_table = ft.DataTable(
         columns=columns,
         rows=rows,
         divider_thickness=1,  # Línea divisoria en medio
         column_spacing=10,
-        heading_row_color=ft.colors.BLACK12,
+        heading_row_color="#E68F59",
         heading_row_height=50,
         data_row_color={ft.ControlState.HOVERED: "white"},
         show_checkbox_column=False,
@@ -87,21 +86,19 @@ def create_data_table(items):
     return data_table
 
 def show_bottom_sheet(page, items):
-    # Crear el contenido del BottomSheet
     bottom_sheet_content = Column(
         controls=[
             create_data_table(items)
         ],
         spacing=10,
-        scroll=ScrollMode.ALWAYS  # Habilitar el scroll dentro del BottomSheet
+        scroll=ScrollMode.ALWAYS  
     )
 
-    # Crear un Container para ajustar la altura del BottomSheet
     bottom_sheet_container = Container(
         content=bottom_sheet_content,
-        height=800,  # Ajustar la altura del BottomSheet
+        height=900,  
         bgcolor=ft.colors.WHITE,  # Cambiar el color de fondo a blanco
-        border_radius=ft.border_radius.all(20)  # Redondear las esquinas
+        
     )
 
     # Crear el BottomSheet
@@ -116,15 +113,13 @@ def show_bottom_sheet(page, items):
     page.update()
 
 def TeachersView(page: ft.Page):
-    # Ajustar el tamaño de la ventana a la resolución del iPhone 15
     page.window.width = 390
     page.window.height = 844
 
     nav_top = create_nav_top(page)
     
-    # Crear la barra de navegación inferior
     nav_bar = create_nav_bar(page)
-    nav_bar.width = page.window.width  # Establecer el ancho de nav_bar
+    nav_bar.width = page.window.width 
 
     # Obtener los datos de los profesores desde el ViewModel
     view_model = TeacherViewModel()
@@ -142,17 +137,16 @@ def TeachersView(page: ft.Page):
                     text=materia['nombre'],
                     on_click=lambda e, profesor=profesor, items=items: show_bottom_sheet(page, items),
                     style=ft.ButtonStyle(
-                        bgcolor='#E68F59',
-                        color=ft.colors.WHITE,
+                        bgcolor='#b8d1e7',
+                        color=ft.colors.BLACK,
                         padding=ft.padding.all(15),
-                        elevation=20,
+                        elevation=10,
                         text_style=ft.TextStyle(
-                            size=12,  # Tamaño de la letra más pequeño
-                            #align=ft.TextAlign.CENTER  # Centrar el texto
+                            size=8,  
                         )
                     ),
-                    width=300,  # Ancho del botón
-                    height=50,  # Altura del botón
+                    width=250,  
+                    height=50,  
                 )
             )
 
@@ -178,8 +172,7 @@ def TeachersView(page: ft.Page):
             size=30,
             weight="bold",
             color=ft.colors.BLACK,
-            font_family="DM Serif Display",  # Cambiar el estilo de letra
-            #decoration=ft.TextDecoration.UNDERLINE  # Remarcar en negro
+            font_family="DM Serif Display", 
         ),
         alignment=ft.alignment.center,  # Centrar el título
         margin=ft.margin.only(top=10, bottom=0)  # Margen superior de 30 px y sin margen inferior
@@ -199,13 +192,10 @@ def TeachersView(page: ft.Page):
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN
         ),
         expand=True,
-        margin=ft.margin.only(bottom=10), # Sin margen alrededor del contenedor principal
-        padding=ft.padding.all(0)  # Sin padding alrededor del contenedor principal
+        margin=ft.margin.only(bottom=10), 
+        padding=ft.padding.all(0)  
         
     )
     page.update()
-    return View("/teachers", [main_container], bgcolor="white", padding=0, spacing=0, appbar=nav_bar)
-    #page.add(main_container)
-    
-#if __name__ == "__main__":
-  #  ft.app(target=TeachersView)
+    return View("/teachers", [main_container], bgcolor="#f5f5f5", padding=0, spacing=0, appbar=nav_bar)
+ 

@@ -6,10 +6,8 @@ from ViewModel.schedule_ViewModel import ScheduleViewModel
 import os
 
 def create_tab_content(day_schedule):
-    # Crear el DataTable
-    data_table = create_data_table(day_schedule)
 
-    # Crear un ListView con scroll que contenga el DataTable
+    data_table = create_data_table(day_schedule)
     list_view = ListView(
         controls=[data_table],
         expand=True
@@ -22,7 +20,7 @@ def create_tab_content(day_schedule):
         padding=ft.padding.all(10),
         border_radius=ft.border_radius.all(10),
         expand=True,
-        margin=ft.margin.only(top=5, bottom=20)  # Margen superior de 20 píxeles
+        margin=ft.margin.only(top=0, bottom=20)  # Margen superior de 20 píxeles
     )
 
     return container
@@ -39,9 +37,9 @@ def create_data_table(day_schedule):
     rows = [
         DataRow(
             cells=[
-                DataCell(Container(content=Text(time.replace("-", ""), color=ft.colors.BLACK, size=8, height=60), margin=ft.margin.all(13))),  # Hora
-                DataCell(Container(content=Text(details.get("materia", ""), color=ft.colors.BLACK, size=8, height=60), margin=ft.margin.all(13))),  # Materia
-                DataCell(Container(content=Text(", ".join(details.get("materia_data", "").split(", ")[1:3]), color=ft.colors.BLACK, size=8, height=60), margin=ft.margin.all(13)))  # Materia Data (valores 1 y 2)
+                DataCell(Container(content=Text(time.replace("-", ""), color=ft.colors.BLACK, size=8, height=60), margin=ft.margin.all(9))),  # Hora
+                DataCell(Container(content=Text(details.get("materia", ""), color=ft.colors.BLACK, size=7, height=60), margin=ft.margin.all(10))),  # Materia
+                DataCell(Container(content=Text(" :EDIFICIO\n".join(details.get("materia_data", "").split(", ")[1:3]), color=ft.colors.BLACK, size=7, height=60), margin=ft.margin.all(10)))  # Materia Data (valores 1 y 2)
             ]
         ) for time, details in day_schedule.items()
     ]
@@ -57,13 +55,13 @@ def create_data_table(day_schedule):
         )
     )
 
-    # Crear el DataTable
+   
     data_table = DataTable(
         width=900,
         columns=columns,  # Asegurar que el DataTable tenga columnas visibles
         rows=rows,
         divider_thickness=1,
-        column_spacing=10,  # Aumentar el espaciado entre columnas
+        column_spacing=25,  # Aumentar el espaciado entre columnas
         heading_row_color=ft.colors.BLACK12,
         heading_row_height=50,
         data_row_color={ft.ControlState.HOVERED: "0x30FF0000"},
@@ -75,9 +73,8 @@ def create_data_table(day_schedule):
 
 def ScheduleView(page: ft.Page):
   
-    # Ajustar el tamaño de la ventana a la resolución del iPhone 15
-    #page.window.width = 390
-    #page.window.height = 844
+    page.window.width = 390
+    page.window.height = 844
 
     nav_top= create_nav_top(page)
 
@@ -108,7 +105,8 @@ def ScheduleView(page: ft.Page):
         content=tabs,
         bgcolor="#E68F59",
         border_radius=ft.border_radius.all(10),  # Bordes redondeados
-        padding=ft.padding.all(5),
+        padding=ft.padding.all(10),
+        width=900,
         margin=ft.margin.only(bottom=40),  # Padding opcional
         expand=True  # Asegurar que el contenedor se expanda
     )
@@ -125,17 +123,15 @@ def ScheduleView(page: ft.Page):
                 Container(
                     content=tabs_container,
                     expand=True  # Asegurar que las pestañas se expandan
-                ) # Agregar la barra de navegación inferior
+                ) 
             ],
             expand=True,
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN
         ),
         expand=True,
-        margin=ft.margin.all(0),  # Sin margen alrededor del contenedor principal
-        padding=ft.padding.all(0)  # Sin padding alrededor del contenedor principal
+        margin=ft.margin.all(0),   
+        padding=ft.padding.all(0)   
     )
 
     page.update()
     return View("/schedule", [main_container],bgcolor="white",padding=0, spacing=0, appbar=nav_bar)
- #if __name__ == "__main__":
- #   ft.app(target=ScheduleView)
