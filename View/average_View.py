@@ -4,6 +4,8 @@ from View.nav_top_View import create_nav_top
 from View.nav_bar_View import create_nav_bar
 import os
 from ViewModel.average_ViewModel import AverageViewModel
+from ViewModel.data_student_ViewModel import DataStudentViewModel
+
 
 def AverageView(page: Page):
     page.spacing = 0
@@ -18,13 +20,13 @@ def AverageView(page: Page):
     normal_radius = 50
     hover_radius = 60
     normal_title_style = TextStyle(
-        size=16, color=colors.WHITE, weight=FontWeight.BOLD
+        size=16, color=colors.BLACK, weight=FontWeight.BOLD
     )
     hover_title_style = TextStyle(
         size=22,
-        color=colors.WHITE,
+        color=colors.ORANGE,
         weight=FontWeight.BOLD,
-        shadow=BoxShadow(blur_radius=2, color=colors.BLACK54),
+        shadow=BoxShadow(blur_radius=2, color=colors.ORANGE_50),
     )
 
     def on_chart_event(e):
@@ -41,6 +43,9 @@ def AverageView(page: Page):
     view_model = AverageViewModel()
     promedios = view_model.get_promedios()
     promedio_general = view_model.get_promedio_general()
+    
+    data_student_view_model = DataStudentViewModel()
+    student_name = data_student_view_model.get_name()
 
     chart = PieChart(
         sections=[
@@ -55,7 +60,7 @@ def AverageView(page: Page):
                 100 - promedio_general,
                 title="",
                 title_style=normal_title_style,
-                color=colors.WHITE,
+                color=colors.GREY,
                 radius=normal_radius,
             ),
         ],
@@ -77,8 +82,8 @@ def AverageView(page: Page):
                 ft.LineChartDataPoint(7, promedios[6]),
                 ft.LineChartDataPoint(8, promedios[7]),
             ],
-            stroke_width=8,
-            color=ft.colors.LIGHT_GREEN,
+            stroke_width=4,
+            color=ft.colors.LIGHT_BLUE,
             curved=True,
             stroke_cap_round=True,
         )
@@ -103,7 +108,7 @@ def AverageView(page: Page):
             ],
             labels_size=32,
         ),
-        tooltip_bgcolor=ft.colors.with_opacity(0.8, ft.colors.BLUE_GREY),
+        tooltip_bgcolor=ft.colors.with_opacity(0.8, ft.colors.BLACK),
         min_y=0,
         max_y=100,
         min_x=1,
@@ -117,8 +122,8 @@ def AverageView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Hola Jorge 👋", size=20, weight="bold", color=colors.BLACK),  # Saludo con emoji
-                    alignment=ft.alignment.center, 
+                    content=Text(f"HOLA!! {student_name} 👋", size=15, weight="bold", color=colors.BLACK),   
+                    alignment=ft.alignment.center_left, 
                     padding=ft.padding.all(10),   
                     margin=ft.margin.only(top=20, bottom=10)   
                 ),
@@ -126,7 +131,7 @@ def AverageView(page: Page):
                     content=Column(
                         controls=[
                             chart,
-                            Text("Promedio General", size=16, weight="bold", color=colors.BLACK)
+                            Text("Promedio General", size=16, weight="bold", color=colors.ORANGE)
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,
                         horizontal_alignment=ft.CrossAxisAlignment.CENTER
@@ -134,10 +139,16 @@ def AverageView(page: Page):
                     alignment=ft.alignment.center,
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=10, bottom=20,left=60,right=60),
-                    bgcolor=ft.colors.GREY,
-                    border_radius=ft.border_radius.all(15),
-                    width=300,  # Definir el ancho del contenedor
-                    height=300  # Definir la altura del contenedor
+                    bgcolor=ft.colors.WHITE,
+                    border_radius=ft.border_radius.all(24),
+                    width=300,  
+                    height=300,  
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=10,
+                    color=ft.colors.with_opacity(0.2, ft.colors.BLACK),
+                    offset=ft.Offset(0, 4)
+    )
                 ),
                 Container(
                     content=Text("Promedios", size=24, weight="bold", color=colors.BLACK),  # Título principal con estilo
@@ -148,7 +159,7 @@ def AverageView(page: Page):
                 Container(
                     content=Column(
                         controls=[
-                            Text("Avance Académico", size=20, weight="bold", color=colors.BLACK),
+                            Text("Avance Académico", size=20, weight="bold", color=colors.ORANGE),
                             line_chart
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,
@@ -157,10 +168,17 @@ def AverageView(page: Page):
                     alignment=ft.alignment.center,
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=10, bottom=20,left=30,right=30),
-                    bgcolor=ft.colors.GREY,
-                    border_radius=ft.border_radius.all(15),
+                    bgcolor=ft.colors.WHITE,
+                    border_radius=ft.border_radius.all(24),
                     width=600,  # Definir el ancho del contenedor
-                    height=300  # Definir la altura del contenedor
+                    height=300,
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=10,
+                    color=ft.colors.with_opacity(0.2, ft.colors.BLACK),
+                    offset=ft.Offset(0, 4)
+    )
+                    
                 ),
                 # Aquí puedes agregar más contenido según sea necesario
             ],
