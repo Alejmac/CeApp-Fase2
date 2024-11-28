@@ -24,6 +24,9 @@ class DataStudentViewModel:
     def iterate_data(self):
         for key, value in self.data.items():
             print(f"{key}: {value}")
+            
+    def get_name(self):
+        return self.data.get("Nombre", "Nombre no encontrado")
 
 # Ejemplo de uso
 #if __name__ == "__main__":

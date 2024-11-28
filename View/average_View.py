@@ -4,6 +4,8 @@ from View.nav_top_View import create_nav_top
 from View.nav_bar_View import create_nav_bar
 import os
 from ViewModel.average_ViewModel import AverageViewModel
+from ViewModel.data_student_ViewModel import DataStudentViewModel
+
 
 def AverageView(page: Page):
     page.spacing = 0
@@ -41,6 +43,9 @@ def AverageView(page: Page):
     view_model = AverageViewModel()
     promedios = view_model.get_promedios()
     promedio_general = view_model.get_promedio_general()
+    
+    data_student_view_model = DataStudentViewModel()
+    student_name = data_student_view_model.get_name()
 
     chart = PieChart(
         sections=[
@@ -117,7 +122,7 @@ def AverageView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Hola Jorge 👋", size=20, weight="bold", color=colors.BLACK),  # Saludo con emoji
+                    content=Text(f"HOLA!! {student_name} 👋", size=15, weight="bold", color=colors.BLACK),   
                     alignment=ft.alignment.center_left, 
                     padding=ft.padding.all(10),   
                     margin=ft.margin.only(top=20, bottom=10)   
