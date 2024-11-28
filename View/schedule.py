@@ -37,9 +37,9 @@ def create_data_table(day_schedule):
     rows = [
         DataRow(
             cells=[
-                DataCell(Container(content=Text(time.replace("-", ""), color=ft.colors.BLACK, size=8, height=60), margin=ft.margin.all(9))),  # Hora
+                DataCell(Container(content=Text(time.replace("-", ""), color=ft.colors.ORANGE, size=8, height=60), margin=ft.margin.all(9))),  # Hora
                 DataCell(Container(content=Text(details.get("materia", ""), color=ft.colors.BLACK, size=7, height=60), margin=ft.margin.all(10))),  # Materia
-                DataCell(Container(content=Text(" :EDIFICIO\n".join(details.get("materia_data", "").split(", ")[1:3]), color=ft.colors.BLACK, size=7, height=60), margin=ft.margin.all(10)))  # Materia Data (valores 1 y 2)
+                DataCell(Container(content=Text(" :EDIFICIO\n".join(details.get("materia_data", "").split(", ")[1:3]), color="#08406F", size=7, height=60), margin=ft.margin.all(10)))  # Materia Data (valores 1 y 2)
             ]
         ) for time, details in day_schedule.items()
     ]
@@ -134,4 +134,4 @@ def ScheduleView(page: ft.Page):
     )
 
     page.update()
-    return View("/schedule", [main_container],bgcolor="white",padding=0, spacing=0, appbar=nav_bar)
+    return View("/schedule", [main_container],bgcolor="#f5f5f5",padding=0, spacing=0, appbar=nav_bar)

@@ -7,7 +7,7 @@ def create_nav_top(page):
                 ft.TextSpan(
                     "CeApp",
                     ft.TextStyle(
-                        size=20,
+                        size=25,
                         weight=ft.FontWeight.NORMAL,
                         foreground=ft.Paint(
                             gradient=ft.PaintLinearGradient(
@@ -56,7 +56,7 @@ def create_nav_top(page):
             alignment="spaceBetween"
         ),
         bgcolor="#f5f5f5",
-        height=50,
+        height=60,
         padding=ft.padding.all(10),
         alignment=ft.alignment.center,
         border=ft.Border(bottom=ft.BorderSide(0.3, ft.colors.GREY)),  # Agregar borde inferior

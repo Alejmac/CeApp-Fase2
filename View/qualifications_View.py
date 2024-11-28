@@ -81,7 +81,12 @@ def create_collection_container(materia, primer_parcial, segundo_parcial, tercer
         border_radius=ft.border_radius.all(20),  
         margin=ft.Margin(left=30, top=0, right=30, bottom=8),   
         bgcolor=bgcolor,
-             
+                    shadow=ft.BoxShadow(
+                    spread_radius=1,
+                    blur_radius=24,
+                    color=ft.colors.with_opacity(0.2, ft.colors.BLACK),
+                    offset=ft.Offset(0, 1)
+    )             
     )
 
     return collection_container
