@@ -2,19 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-# def get_session():
-#     url = "https://ase1.ceti.mx/tecnologo/seguridad/iniciarsesion"
-#     session = requests.Session()
-
-#     session.post(url, data={'registro':21110191,'password':'123asdzX'})
-#     # session.post(url, data={'registro':21110417,'password':'castillogutierrez'})
-#     return session
-
-# def get_kardex(session):
-#     url = 'https://ase1.ceti.mx/tecnologo/tgoalumno/kardex'
-#     response = session.get(url)
-#     return response.text
-
+ 
 def parse_kardex(session):
     url = 'https://ase1.ceti.mx/tecnologo/tgoalumno/kardex'
     response = session.get(url)
@@ -79,9 +67,3 @@ def parse_kardex(session):
 
     return kardex_data
 
-# session = get_session()
-
-# kardex_data = parse_kardex(session)
-
-# import pprint
-# pprint.pprint(kardex_data)

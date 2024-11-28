@@ -3,11 +3,12 @@ from flet import Page, Column, Text, Container, ScrollMode, View, PieChart, PieC
 from View.nav_top_View import create_nav_top
 from View.nav_bar_View import create_nav_bar
 import os
+from ViewModel.average_ViewModel import AverageViewModel
 
 def AverageView(page: Page):
     page.spacing = 0
     page.padding = 0
-    
+
     page.window.width = 390
     page.window.height = 844
 
@@ -36,17 +37,22 @@ def AverageView(page: Page):
                 section.title_style = normal_title_style
         chart.update()
 
+    # Obtener los promedios del ViewModel
+    view_model = AverageViewModel()
+    promedios = view_model.get_promedios()
+    promedio_general = view_model.get_promedio_general()
+
     chart = PieChart(
         sections=[
             PieChartSection(
-                89,
-                title="89",
+                promedio_general,
+                title=f"{promedio_general}%",
                 title_style=normal_title_style,
                 color=colors.BLUE,
                 radius=normal_radius,
             ),
             PieChartSection(
-                11,
+                100 - promedio_general,
                 title="",
                 title_style=normal_title_style,
                 color=colors.WHITE,
@@ -62,17 +68,17 @@ def AverageView(page: Page):
     line_chart_data = [
         ft.LineChartData(
             data_points=[
-                ft.LineChartDataPoint(1, 70),
-                ft.LineChartDataPoint(2, 75),
-                ft.LineChartDataPoint(3, 80),
-                ft.LineChartDataPoint(4, 85),
-                ft.LineChartDataPoint(5, 90),
-                ft.LineChartDataPoint(6, 95),
-                ft.LineChartDataPoint(7, 85),
-                ft.LineChartDataPoint(8, 89),
+                ft.LineChartDataPoint(1, promedios[0]),
+                ft.LineChartDataPoint(2, promedios[1]),
+                ft.LineChartDataPoint(3, promedios[2]),
+                ft.LineChartDataPoint(4, promedios[3]),
+                ft.LineChartDataPoint(5, promedios[4]),
+                ft.LineChartDataPoint(6, promedios[5]),
+                ft.LineChartDataPoint(7, promedios[6]),
+                ft.LineChartDataPoint(8, promedios[7]),
             ],
             stroke_width=8,
-            color=ft.colors.LIGHT_BLUE,
+            color=ft.colors.LIGHT_GREEN,
             curved=True,
             stroke_cap_round=True,
         )
@@ -81,18 +87,18 @@ def AverageView(page: Page):
     line_chart = ft.LineChart(
         data_series=line_chart_data,
         border=ft.Border(
-            bottom=ft.BorderSide(4, ft.colors.with_opacity(0.5, ft.colors.ON_PRIMARY))
+            bottom=ft.BorderSide(4, ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE))
         ),
         left_axis=ft.ChartAxis(
             labels=[
-                ft.ChartAxisLabel(value=i*20, label=ft.Text(f"{i*20}", size=10, weight=ft.FontWeight.BOLD))
+                ft.ChartAxisLabel(value=i*20, label=ft.Text(f"{i*20}", size=14, weight=ft.FontWeight.BOLD))
                 for i in range(6)
             ],
             labels_size=40,
         ),
         bottom_axis=ft.ChartAxis(
             labels=[
-                ft.ChartAxisLabel(value=i, label=ft.Text(f"{i}", size=10, weight=ft.FontWeight.BOLD))
+                ft.ChartAxisLabel(value=i, label=ft.Text(f"{i}", size=16, weight=ft.FontWeight.BOLD))
                 for i in range(1, 9)
             ],
             labels_size=32,
@@ -111,7 +117,7 @@ def AverageView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Hola Jorge 👋", size=19, weight="bold", color=colors.BLACK),  # Saludo con emoji
+                    content=Text("Hola Jorge 👋", size=20, weight="bold", color=colors.BLACK),  # Saludo con emoji
                     alignment=ft.alignment.center, 
                     padding=ft.padding.all(10),   
                     margin=ft.margin.only(top=20, bottom=10)   
@@ -120,7 +126,7 @@ def AverageView(page: Page):
                     content=Column(
                         controls=[
                             chart,
-                            Text("Promedio General", size=10, weight="bold", color=colors.BLACK)
+                            Text("Promedio General", size=16, weight="bold", color=colors.BLACK)
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,
                         horizontal_alignment=ft.CrossAxisAlignment.CENTER
@@ -130,19 +136,19 @@ def AverageView(page: Page):
                     margin=ft.margin.only(top=10, bottom=20,left=60,right=60),
                     bgcolor=ft.colors.GREY,
                     border_radius=ft.border_radius.all(15),
-                    width=300,  
-                    height=300   
+                    width=300,  # Definir el ancho del contenedor
+                    height=300  # Definir la altura del contenedor
                 ),
                 Container(
-                    content=Text("Avance Académico", size=14, weight="bold", color=colors.BLACK),  # Título principal con estilo
+                    content=Text("Promedios", size=24, weight="bold", color=colors.BLACK),  # Título principal con estilo
                     alignment=ft.alignment.center, 
                     padding=ft.padding.all(10),   
-                    margin=ft.margin.only(top=10, bottom=5)   
+                    margin=ft.margin.only(top=10, bottom=20)   
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(" ", size=10, weight="bold", color=colors.BLACK),
+                            Text("Avance Académico", size=20, weight="bold", color=colors.BLACK),
                             line_chart
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,
@@ -167,6 +173,6 @@ def AverageView(page: Page):
         margin=ft.margin.only(top=0),   
         padding=ft.padding.all(0)   
     )
- 
+
     page.update()
     return View("/average", [main_container], bgcolor="#f5f5f5", padding=0, spacing=0, appbar=nav_bar)
