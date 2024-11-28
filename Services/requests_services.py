@@ -321,18 +321,19 @@ def parse_kardex(session):
     for level, data in kardex_data.items():
         materias = data['materias']
         if materias:
-            total_nivel = sum(m['promedio'] for m in materias)
-            count_nivel = len(materias)
-            promedio_nivel = total_nivel / count_nivel if count_nivel > 0 else 0
+            # Filtrar solo materias evaluadas (promedio > 0)
+            materias_evaluadas = [m for m in materias if m['promedio'] > 0]
+            total_nivel = sum(m['promedio'] for m in materias_evaluadas)
+            count_nivel = len(materias_evaluadas)
+            promedio_nivel = round(total_nivel / count_nivel, 2) if count_nivel > 0 else 0
             kardex_data[level]['promedio'] = promedio_nivel
 
             # Sumar al promedio general
             total_promedios += total_nivel
             total_materias += count_nivel
 
-    promedio_general = total_promedios / total_materias if total_materias > 0 else 0
+    promedio_general = round(total_promedios / total_materias, 2) if total_materias > 0 else 0
     kardex_data['promedio_general'] = promedio_general
-
     return kardex_data
 
 def save_file(data, file_name):
