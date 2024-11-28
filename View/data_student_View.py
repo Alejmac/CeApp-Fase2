@@ -56,76 +56,82 @@ def DataStudentView(page: Page):
                     border_radius=ft.border_radius.all(0),  # Bordes redondeados
                 ),
                 Container(
-                    content=Text(f"{nombre}", size=14, weight="bold", color=ft.colors.BLACK),
+                    content=Text(f"{nombre}", size=16, weight="bold", color=ft.colors.BLACK),
                     alignment=ft.alignment.center,
                     margin=ft.margin.only(top=10)
                 ),
                 Container(
-                    content=Text(f"{registro}", size=14, weight="bold", color=ft.colors.BLACK),
+                    content=Text(f"{registro}", size=16, weight="bold", color=ft.colors.BLACK),
                     alignment=ft.alignment.center,
                     margin=ft.margin.only(top=3)
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Carrera: {carrera}", size=14, weight="bold", color=ft.colors.WHITE),
-                            Text(f"Nivel Educativo: {nivel_educativo}", size=14, weight="bold", color=ft.colors.WHITE),
-                            Text(f"Semestre: {semestre}", size=14, weight="bold", color=ft.colors.WHITE),
-                            Text(f"Estado del Alumno: {estado_alumno}", size=14, weight="bold", color=ft.colors.WHITE)
+                            Text(f"Carrera: {carrera}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Nivel Educativo: {nivel_educativo}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Semestre: {semestre}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Estado del Alumno: {estado_alumno}", size=10, weight="bold", color=ft.colors.BLACK)
                         ],
                         spacing=5
                     ),
-                    bgcolor='#1A74AF',
+                    bgcolor='white',
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=20, left=30, right=30),   
                     alignment=ft.alignment.center_left,
-                    border_radius=ft.border_radius.all(10)  
+                    border_radius=ft.border_radius.all(10),
+                    border=ft.border.all(0.5, ft.colors.GREY)     
+  
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Área de Formación: {area_formacion}", size=14, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Nivel: {nivel}", size=14, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Plan de Estudios: {plan_estudios}", size=14, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Turno: {turno}", size=14, weight="bold", color=ft.colors.BLACK)
+                            Text(f"Área de Formación: {area_formacion}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Nivel: {nivel}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Plan de Estudios: {plan_estudios}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Turno: {turno}", size=10, weight="bold", color=ft.colors.BLACK)
                         ],
                         spacing=5
                     ),
-                    bgcolor='#A1D8EC',
-                    padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=6, left=30, right=30),   
-                    alignment=ft.alignment.center_right,
-                    border_radius=ft.border_radius.all(10)   
-                ),
-                Container(
-                    content=Column(
-                        controls=[
-                            Text(f"Tipo de Plan: {tipo_plan}", size=14, weight="bold", color=ft.colors.WHITE),
-                            Text(f"Tipo de Ingreso: {tipo_ingreso}", size=14, weight="bold", color=ft.colors.WHITE),
-                            Text(f"Tutor: {tutor}", size=14, weight="bold", color=ft.colors.WHITE)
-                        ],
-                        spacing=5
-                    ),
-                    bgcolor='#1A74AF',
+                    bgcolor='white',
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=6, left=30, right=30),   
                     alignment=ft.alignment.center_left,
-                    border_radius=ft.border_radius.all(10)   
+                    border_radius=ft.border_radius.all(10),
+                    border=ft.border.all(0.5, ft.colors.GREY)     
+  
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Correo Académico: {correo_academico}", size=14, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Correo Institucional: {correo_institucional}", size=14, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Correo Personal: {correo_personal}", size=14, weight="bold", color=ft.colors.BLACK)
+                            Text(f"Tipo de Plan: {tipo_plan}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Tipo de Ingreso: {tipo_ingreso}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Tutor: {tutor}", size=10, weight="bold", color=ft.colors.BLACK)
                         ],
                         spacing=5
                     ),
-                    bgcolor='#A1D8EC',
+                    bgcolor='white',
                     padding=ft.padding.all(10),
-                    margin=ft.margin.only(top=6,  left=30, right=30 , bottom=20),  
-                    alignment=ft.alignment.center_right,
-                    border_radius=ft.border_radius.all(10)   
+                    margin=ft.margin.only(top=6, left=30, right=30),   
+                    alignment=ft.alignment.center_left,
+                    border_radius=ft.border_radius.all(10),
+                    border=ft.border.all(0.5, ft.colors.GREY)     
+                ),
+                Container(
+                    content=Column(
+                        controls=[
+                            Text(f"Correo Académico: {correo_academico}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Correo Institucional: {correo_institucional}", size=10, weight="bold", color=ft.colors.BLACK),
+                            Text(f"Correo Personal: {correo_personal}", size=10, weight="bold", color=ft.colors.BLACK)
+                        ],
+                        spacing=5,
+                    ),
+                    bgcolor='white',
+                    padding=ft.padding.all(10),
+                    margin=ft.margin.only(top=6,  left=30, right=30 , bottom=10),  
+                    alignment=ft.alignment.center_left,
+                    border_radius=ft.border_radius.all(10),
+                    border=ft.border.all(0.5, ft.colors.GREY),     
                 ),
             ],
             

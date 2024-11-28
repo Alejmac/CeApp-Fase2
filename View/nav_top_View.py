@@ -7,11 +7,11 @@ def create_nav_top(page):
                 ft.TextSpan(
                     "CeApp",
                     ft.TextStyle(
-                        size=29,
+                        size=20,
                         weight=ft.FontWeight.NORMAL,
                         foreground=ft.Paint(
                             gradient=ft.PaintLinearGradient(
-                                (0, 20), (150, 20), [ft.colors.ORANGE, ft.colors.WHITE]
+                                (0, 20), (150, 20), [ft.colors.ORANGE_900, ft.colors.ORANGE_100]
                             )
                         ),
                     ),
@@ -55,12 +55,12 @@ def create_nav_top(page):
             ],
             alignment="spaceBetween"
         ),
-        bgcolor="#08406F",
-        height=104,
+        bgcolor="#f5f5f5",
+        height=50,
         padding=ft.padding.all(10),
         alignment=ft.alignment.center,
-        border=ft.border.all(0.2, ft.colors.GREY,)  # Agregar borde
-        
+        border=ft.Border(bottom=ft.BorderSide(0.3, ft.colors.GREY)),  # Agregar borde inferior
+        margin=ft.margin.only(top=20) 
         
     )
 

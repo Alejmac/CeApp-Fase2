@@ -27,7 +27,7 @@ def main(page: Page):
             "/average": lambda: AverageView(page),
         }
         
-        view_function = routes.get(page.route, routes["/average"])           
+        view_function = routes.get(page.route, routes["/login"])           
         page.views.append(view_function())   
  
         page.update()

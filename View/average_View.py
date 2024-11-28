@@ -85,14 +85,14 @@ def AverageView(page: Page):
         ),
         left_axis=ft.ChartAxis(
             labels=[
-                ft.ChartAxisLabel(value=i*20, label=ft.Text(f"{i*20}", size=14, weight=ft.FontWeight.BOLD))
+                ft.ChartAxisLabel(value=i*20, label=ft.Text(f"{i*20}", size=10, weight=ft.FontWeight.BOLD))
                 for i in range(6)
             ],
             labels_size=40,
         ),
         bottom_axis=ft.ChartAxis(
             labels=[
-                ft.ChartAxisLabel(value=i, label=ft.Text(f"{i}", size=16, weight=ft.FontWeight.BOLD))
+                ft.ChartAxisLabel(value=i, label=ft.Text(f"{i}", size=10, weight=ft.FontWeight.BOLD))
                 for i in range(1, 9)
             ],
             labels_size=32,
@@ -111,7 +111,7 @@ def AverageView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text("Hola Jorge 👋", size=20, weight="bold", color=colors.BLACK),  # Saludo con emoji
+                    content=Text("Hola Jorge 👋", size=19, weight="bold", color=colors.BLACK),  # Saludo con emoji
                     alignment=ft.alignment.center, 
                     padding=ft.padding.all(10),   
                     margin=ft.margin.only(top=20, bottom=10)   
@@ -130,8 +130,8 @@ def AverageView(page: Page):
                     margin=ft.margin.only(top=10, bottom=20,left=60,right=60),
                     bgcolor=ft.colors.GREY,
                     border_radius=ft.border_radius.all(15),
-                    width=300,  # Definir el ancho del contenedor
-                    height=300  # Definir la altura del contenedor
+                    width=300,  
+                    height=300   
                 ),
                 Container(
                     content=Text("Avance Académico", size=14, weight="bold", color=colors.BLACK),  # Título principal con estilo
