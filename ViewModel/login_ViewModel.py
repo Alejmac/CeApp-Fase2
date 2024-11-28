@@ -25,6 +25,9 @@ class LoginViewModel:
  
             student = get_student(sesion)
             save_file(student, 'data_cleaned.json')
+
+            kardex = parse_kardex(sesion)
+            save_file(kardex, 'kardex.json')
  
             logout_ceti(sesion)
             sesion.close()

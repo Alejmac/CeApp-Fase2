@@ -82,7 +82,7 @@ def close_alert(page, alert, success):
     alert.open = False
     page.update()
     if success:
-        page.go("/schedule")
+        page.go("/average")
 
 def LoginView(page: Page):
 

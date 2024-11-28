@@ -1,0 +1,491 @@
+{
+  "Nivel 1": {
+    "materias": [
+      {
+        "clave": "19SCB05",
+        "nombre": "MATEMÁTICAS DISCRETAS",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 98
+      },
+      {
+        "clave": "19SCBMCC01",
+        "nombre": "PRECÁLCULO",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 90
+      },
+      {
+        "clave": "19SCSH01",
+        "nombre": "CULTURA COMPARADA",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 89
+      },
+      {
+        "clave": "19SCSHMCC02",
+        "nombre": "MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 95
+      },
+      {
+        "clave": "19SDS01",
+        "nombre": "INTRODUCCIÓN AL DESARROLLO DE SOFTWARE",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDS02",
+        "nombre": "PROGRAMACIÓN ESTRUCTURADA",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 76
+      },
+      {
+        "clave": "19SDS03",
+        "nombre": "REDES I",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 99
+      },
+      {
+        "clave": "19SDS04",
+        "nombre": "TALLER DE COMUNICACIÓN ORAL Y ESCRITA",
+        "tipo": "Ordinario",
+        "periodo": "12021",
+        "promedio": 87
+      }
+    ],
+    "promedio": 91.75
+  },
+  "Nivel 2": {
+    "materias": [
+      {
+        "clave": "19SCBMCC03",
+        "nombre": "ÁLGEBRA LINEAL",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 84
+      },
+      {
+        "clave": "19SCBMCC04",
+        "nombre": "CÁLCULO DIFERENCIAL E INTEGRAL",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 70
+      },
+      {
+        "clave": "19SCCMCC01",
+        "nombre": "INGLÉS I",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 93
+      },
+      {
+        "clave": "19SCEAMCC03",
+        "nombre": "INTRODUCCIÓN A LA ECONOMÍA",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 70
+      },
+      {
+        "clave": "19SCSHMCC03",
+        "nombre": "HABILIDADES CRÍTICAS DE LA INVESTIGACIÓN",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 95
+      },
+      {
+        "clave": "19SDS05",
+        "nombre": "ELECTRÓNICA BÁSICA",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 98
+      },
+      {
+        "clave": "19SDS06",
+        "nombre": "PROGRAMACIÓN ORIENTADA A OBJETOS",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 93
+      },
+      {
+        "clave": "19SDS07",
+        "nombre": "REDES II",
+        "tipo": "Ordinario",
+        "periodo": "32021",
+        "promedio": 93
+      }
+    ],
+    "promedio": 87.0
+  },
+  "Nivel 3": {
+    "materias": [
+      {
+        "clave": "19SCBMCC07",
+        "nombre": "MÉTODOS NUMÉRICOS",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 85
+      },
+      {
+        "clave": "19SCBMCC08",
+        "nombre": "CÁLCULO DE VARIAS VARIABLES",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 82
+      },
+      {
+        "clave": "19SCBMCC09",
+        "nombre": "PROBABILIDAD Y ESTADÍSTICA",
+        "tipo": "Acreditación",
+        "periodo": "42021",
+        "promedio": 87
+      },
+      {
+        "clave": "19SCCMCC02",
+        "nombre": "INGLÉS II",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 93
+      },
+      {
+        "clave": "19SCEAMCC01",
+        "nombre": "ADMINISTRACIÓN DE RECURSOS",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 86
+      },
+      {
+        "clave": "19SDS08",
+        "nombre": "ARQUITECTURA DE COMPUTADORAS",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 92
+      },
+      {
+        "clave": "19SDS09",
+        "nombre": "PROGRAMACIÓN ORIENTADA A EVENTOS",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 98
+      },
+      {
+        "clave": "19SDS10",
+        "nombre": "REDES III",
+        "tipo": "Ordinario",
+        "periodo": "12022",
+        "promedio": 99
+      }
+    ],
+    "promedio": 90.25
+  },
+  "Nivel 4": {
+    "materias": [
+      {
+        "clave": "19SCBMCC02",
+        "nombre": "ESTÁTICA",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 71
+      },
+      {
+        "clave": "19SCBMCC06",
+        "nombre": "ECUACIONES DIFERENCIALES",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 91
+      },
+      {
+        "clave": "19SCCMCC03",
+        "nombre": "INGLÉS III",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 97
+      },
+      {
+        "clave": "19SDS11",
+        "nombre": "ARQUITECTURA DE SISTEMAS OPERATIVOS",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 99
+      },
+      {
+        "clave": "19SDS12",
+        "nombre": "BASES DE DATOS I",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 96
+      },
+      {
+        "clave": "19SDS13",
+        "nombre": "COMERCIO ELECTRÓNICO Y MARKETING DIGITAL",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDS14",
+        "nombre": "DESARROLLO WEB I",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDS15",
+        "nombre": "ESTRUCTURAS DE DATOS Y ALGORITMIA",
+        "tipo": "Ordinario",
+        "periodo": "32022",
+        "promedio": 88
+      }
+    ],
+    "promedio": 92.75
+  },
+  "Nivel 5": {
+    "materias": [
+      {
+        "clave": "19SCBMCC05",
+        "nombre": "DINÁMICA",
+        "tipo": "Acreditación",
+        "periodo": "42022",
+        "promedio": 71
+      },
+      {
+        "clave": "19SCCMCC04",
+        "nombre": "INGLÉS IV",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 84
+      },
+      {
+        "clave": "19SDS16",
+        "nombre": "ADMINISTRACIÓN DE SO'S Y VIRTUALIZACIÓN",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 89
+      },
+      {
+        "clave": "19SDS17",
+        "nombre": "BASES DE DATOS II",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 74
+      },
+      {
+        "clave": "19SDS18",
+        "nombre": "COMPUTACIÓN PARALELA",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 71
+      },
+      {
+        "clave": "19SDS19",
+        "nombre": "DESARROLLO PARA DISPOSITIVOS MÓVILES I",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 73
+      },
+      {
+        "clave": "19SDS20",
+        "nombre": "DESARROLLO WEB II",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 78
+      },
+      {
+        "clave": "19SDS38",
+        "nombre": "ARQUITECTURA DE SOFTWARE",
+        "tipo": "Ordinario",
+        "periodo": "12023",
+        "promedio": 98
+      }
+    ],
+    "promedio": 79.75
+  },
+  "Nivel 6": {
+    "materias": [
+      {
+        "clave": "19SCCMCC05",
+        "nombre": "INGLÉS V",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 82
+      },
+      {
+        "clave": "19SDS21",
+        "nombre": "ADMINISTRACIÓN DE PROYECTOS DE T.I",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 92
+      },
+      {
+        "clave": "19SDS22",
+        "nombre": "DESARROLLO PARA DISPOSITIVOS MÓVILES II",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDS24",
+        "nombre": "GESTIÓN DE SERVICIOS DE T.I",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 93
+      },
+      {
+        "clave": "19SDS25",
+        "nombre": "GRAFICAS POR COMPUTADORA 2D Y 3D",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 76
+      },
+      {
+        "clave": "19SDS26",
+        "nombre": "INTELIGENCIA ARTIFICIAL",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 98
+      },
+      {
+        "clave": "19SDS27",
+        "nombre": "TEORÍA DE AUTÓMATAS",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 74
+      },
+      {
+        "clave": "19SDSSI01",
+        "nombre": "HACKING ÉTICO",
+        "tipo": "Ordinario",
+        "periodo": "32023",
+        "promedio": 100
+      }
+    ],
+    "promedio": 89.375
+  },
+  "Nivel 7": {
+    "materias": [
+      {
+        "clave": "19SCCMCC06",
+        "nombre": "INGLÉS VI",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 83
+      },
+      {
+        "clave": "19SCEAMCC04",
+        "nombre": "INNOVACIÓN Y HABILIDADES EMPRENDEDORAS",
+        "tipo": "Extraordinario",
+        "periodo": "12024",
+        "promedio": 70
+      },
+      {
+        "clave": "19SDS28",
+        "nombre": "ANÁLISIS DE DATOS",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 91
+      },
+      {
+        "clave": "19SDS29",
+        "nombre": "INTERNET DE LAS COSAS",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 79
+      },
+      {
+        "clave": "19SDS32",
+        "nombre": "PROCESAMIENTO DE IMÁGENES",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDS33",
+        "nombre": "PROYECTO I",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 90
+      },
+      {
+        "clave": "19SDSSI02",
+        "nombre": "DESARROLLO DE SOFTWARE SEGURO",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 100
+      },
+      {
+        "clave": "19SDSSI03",
+        "nombre": "INFORMÁTICA FORENSE",
+        "tipo": "Ordinario",
+        "periodo": "12024",
+        "promedio": 93
+      }
+    ],
+    "promedio": 88.25
+  },
+  "Nivel 8": {
+    "materias": [
+      {
+        "clave": "19SCCMCC07",
+        "nombre": "INGLÉS VII",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SCEAMCC02",
+        "nombre": "PLANEACIÓN ESTRATÉGICA Y HABILIDADES DIRECTIVAS",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SCSHMCC01",
+        "nombre": "ÉTICA PROFESIONAL",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SDS34",
+        "nombre": "ASEGURAMIENTO DE LA CALIDAD DEL SOFTWARE",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SDS36",
+        "nombre": "PROYECTO II",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SDS37",
+        "nombre": "TECNOLOGÍAS EMERGENTES",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "19SDSSI04",
+        "nombre": "INGENIERÍA INVERSA",
+        "tipo": "",
+        "periodo": "",
+        "promedio": 0
+      },
+      {
+        "clave": "SS001",
+        "nombre": "SERVICIO SOCIAL",
+        "tipo": "ACR",
+        "periodo": "12024",
+        "promedio": 0
+      }
+    ],
+    "promedio": 0.0
+  },
+  "promedio_general": 77.390625
+}
