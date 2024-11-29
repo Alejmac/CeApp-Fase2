@@ -70,18 +70,13 @@ def AverageView(page: Page):
         expand=True,
     )
 
+    data_points = [
+        ft.LineChartDataPoint(index + 1, promedio)
+        for index, promedio in enumerate(promedios)
+    ]
     line_chart_data = [
         ft.LineChartData(
-            data_points=[
-                ft.LineChartDataPoint(1, promedios[0]),
-                ft.LineChartDataPoint(2, promedios[1]),
-                ft.LineChartDataPoint(3, promedios[2]),
-                ft.LineChartDataPoint(4, promedios[3]),
-                ft.LineChartDataPoint(5, promedios[4]),
-                ft.LineChartDataPoint(6, promedios[5]),
-                ft.LineChartDataPoint(7, promedios[6]),
-                ft.LineChartDataPoint(8, promedios[7]),
-            ],
+            data_points=data_points,
             stroke_width=4,
             color=ft.colors.LIGHT_BLUE,
             curved=True,
@@ -122,7 +117,7 @@ def AverageView(page: Page):
             controls=[
                 nav_top,
                 Container(
-                    content=Text(f"HOLA!! {student_name} 👋", size=15, weight="bold", color=colors.BLACK),   
+                    content=Text(f"👋 HOLA!! {student_name} ", size=15, weight="bold", color=colors.BLACK),   
                     alignment=ft.alignment.center_left, 
                     padding=ft.padding.all(10),   
                     margin=ft.margin.only(top=20, bottom=10)   

@@ -9,8 +9,10 @@ class AverageViewModel:
     def get_promedios(self):
         promedios = []
         for nivel, contenido in self.data.items():
-            if nivel != "promedio_general": 
-                promedios.append(contenido["promedio"])
+            if nivel != "promedio_general" and "promedio" in contenido:
+             promedio = contenido["promedio"]
+            if promedio > 0:
+                promedios.append(promedio)
         return promedios
 
     def get_promedio_general(self):

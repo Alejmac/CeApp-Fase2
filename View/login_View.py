@@ -10,6 +10,7 @@ async def on_login_click(e, page, registro_field, password_field):
     login_view_model = LoginViewModel(main_instance=page)
     registro = registro_field.value
     password = password_field.value
+     
 
     pb = ft.ProgressBar(width=400)
     progress_text = ft.Text("Iniciando sesión...")

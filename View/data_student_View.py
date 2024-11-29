@@ -67,62 +67,87 @@ def DataStudentView(page: Page):
                 ),
                 Container(
                     content=Column(
-                        controls=[
-                            Text(f"Carrera: {carrera}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Nivel Educativo: {nivel_educativo}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Semestre: {semestre}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Estado del Alumno: {estado_alumno}", size=10, weight="bold", color=ft.colors.BLACK)
-                        ],
-                        spacing=5
+                             controls=[
+                                Icon(name=ft.icons.LABEL_IMPORTANT, color=ft.colors.BLUE),
+                                Column(
+                                controls=[
+                                    Text(f"Carrera: {carrera}", size=12,  color=ft.colors.BLACK),
+                                    Text(f"Nivel Educativo: {nivel_educativo}", size=10,  color=ft.colors.BLACK),
+                                    Text(f"Semestre: {semestre}", size=10,  color=ft.colors.BLACK),
+                                    Text(f"Estado del Alumno: {estado_alumno}", size=10,  color=ft.colors.BLACK)
+                                 ],
+                spacing=5
+            )
+        ]
                     ),
                     bgcolor='white',
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=20, left=30, right=30),   
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10),
-                    border=ft.border.all(0.5, ft.colors.GREY)     
+                    border=ft.border.all(0.5, ft.colors.GREY),
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=15,
+                    color=ft.colors.GREY,
+                    offset=ft.Offset(0, 5)
+                    )
   
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Área de Formación: {area_formacion}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Nivel: {nivel}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Plan de Estudios: {plan_estudios}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Turno: {turno}", size=10, weight="bold", color=ft.colors.BLACK)
+                            Icon(name=ft.icons.LABEL_IMPORTANT, color=ft.colors.BLUE),
+                            Text(f"Área de Formación: {area_formacion}", size=12, color=ft.colors.BLACK),
+                            Text(f"Nivel: {nivel}", size=12, color=ft.colors.BLACK),
+                            Text(f"Plan de Estudios: {plan_estudios}", size=12, color=ft.colors.BLACK),
+                            Text(f"Turno: {turno}", size=12, color=ft.colors.BLACK)
                         ],
-                        spacing=5
+                        spacing=6
                     ),
                     bgcolor='white',
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=6, left=30, right=30),   
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10),
-                    border=ft.border.all(0.5, ft.colors.GREY)     
+                    border=ft.border.all(0.5, ft.colors.GREY),
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=15,
+                    color=ft.colors.GREY,
+                    offset=ft.Offset(0, 5)
+                    )     
   
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Tipo de Plan: {tipo_plan}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Tipo de Ingreso: {tipo_ingreso}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Tutor: {tutor}", size=10, weight="bold", color=ft.colors.BLACK)
+                            Icon(name=ft.icons.LABEL_IMPORTANT, color=ft.colors.BLUE),
+                            Text(f"Tipo de Plan: {tipo_plan}", size=12, color=ft.colors.BLACK),
+                            Text(f"Tipo de Ingreso: {tipo_ingreso}", size=12, color=ft.colors.BLACK),
+                            Text(f"Tutor: {tutor}", size=12, color=ft.colors.BLACK)
                         ],
-                        spacing=5
-                    ),
+                        spacing=5                    ),
                     bgcolor='white',
                     padding=ft.padding.all(10),
                     margin=ft.margin.only(top=6, left=30, right=30),   
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10),
-                    border=ft.border.all(0.5, ft.colors.GREY)     
+                    border=ft.border.all(0.5, ft.colors.GREY),
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=15,
+                    color=ft.colors.GREY,
+                    offset=ft.Offset(0, 5)
+                    )     
                 ),
                 Container(
                     content=Column(
                         controls=[
-                            Text(f"Correo Académico: {correo_academico}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Correo Institucional: {correo_institucional}", size=10, weight="bold", color=ft.colors.BLACK),
-                            Text(f"Correo Personal: {correo_personal}", size=10, weight="bold", color=ft.colors.BLACK)
+                            Icon(name=ft.icons.LABEL_IMPORTANT, color=ft.colors.BLUE),
+                            Text(f"Correo Académico: {correo_academico}", size=12, color=ft.colors.BLACK),
+                            Text(f"Correo Institucional: {correo_institucional}", size=12, color=ft.colors.BLACK),
+                            Text(f"Correo Personal: {correo_personal}", size=12, color=ft.colors.BLACK)
                         ],
                         spacing=5,
                     ),
@@ -131,7 +156,13 @@ def DataStudentView(page: Page):
                     margin=ft.margin.only(top=6,  left=30, right=30 , bottom=10),  
                     alignment=ft.alignment.center_left,
                     border_radius=ft.border_radius.all(10),
-                    border=ft.border.all(0.5, ft.colors.GREY),     
+                    border=ft.border.all(0.5, ft.colors.GREY),
+                    shadow=ft.BoxShadow(
+                    spread_radius=2,
+                    blur_radius=15,
+                    color=ft.colors.GREY,
+                    offset=ft.Offset(0, 5)
+                    )     
                 ),
             ],
             
@@ -143,9 +174,8 @@ def DataStudentView(page: Page):
         expand=True,
         margin=ft.margin.only(top=0, bottom=0)  
     )        
-    #page.add(main_container)
-    #page.add(nav_bar)  
+ 
     return View("/data_student", [main_container],bgcolor="white",padding=0, spacing=0, appbar=nav_bar)
 
-if __name__ == "__main__":
-    ft.app(target=DataStudentView)
+# if __name__ == "__main__":
+#     ft.app(target=DataStudentView)
