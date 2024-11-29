@@ -6,12 +6,25 @@ import asyncio
 from ViewModel.login_ViewModel import LoginViewModel
 image_path = os.path.join(os.getcwd(), "assets", "entrada1.png")
 
+checkbox_state = False
+
+def print_checkbox_state(e):
+    global checkbox_state
+    checkbox_state = e.control.value
+    print(checkbox_state)
+
+def change_state(e):
+    if checkbox_state:
+        login_view_model = LoginViewModel(main_instance=None)
+        login_view_model.save_checkbox_state(checkbox_state)
+        print("se modifico el estao del json")
+    
+
 async def on_login_click(e, page, registro_field, password_field):
     login_view_model = LoginViewModel(main_instance=page)
     registro = registro_field.value
     password = password_field.value
-     
-
+    
     pb = ft.ProgressBar(width=400)
     progress_text = ft.Text("Iniciando sesión...")
     progress_alert = AlertDialog(
@@ -50,13 +63,16 @@ async def on_login_click(e, page, registro_field, password_field):
     await progress_task
 
     if login_success:
+        change_state(e)
         alert = AlertDialog(
             title=Text("Login Exitoso"),
             content=Text("Bienvenido al sistema del CETI"),
             actions=[
-                ft.TextButton("OK", on_click=lambda e: close_alert(page, alert, success=True))
+                ft.TextButton("OK", on_click=lambda e: close_alert(page, alert, success=True)),
+                
             ],
-            modal=True  
+            modal=True,
+              
         )
     else:
         alert = AlertDialog(
@@ -73,11 +89,6 @@ async def on_login_click(e, page, registro_field, password_field):
     page.overlay.append(alert)
     alert.open = True
     page.update()
-
-def print_checkbox_state(e):
-    login_view_model = LoginViewModel(main_instance=None)
-    login_view_model.save_checkbox_state(e.control.value)
-    print(e.control.value)
 
 def close_alert(page, alert, success):
     alert.open = False

@@ -1,5 +1,8 @@
 import flet as ft
 from flet import Container, PopupMenuButton, PopupMenuItem, Text, Row, icons, colors
+import json
+import os
+
 
 def create_nav_top(page):
     title_text = Text(
@@ -42,7 +45,7 @@ def create_nav_top(page):
     popup_menu_button = PopupMenuButton(
         items=[
             PopupMenuItem(icon=ft.icons.PERSON,text="Datos del Alumno", on_click=lambda _: page.go("/data_student")),
-            PopupMenuItem(icon=ft.icons.EXIT_TO_APP,text="Salir", on_click=lambda _: page.go("/login")),
+            PopupMenuItem(icon=ft.icons.EXIT_TO_APP,text="Salir", on_click=lambda _: (ModificarJson(), page.go("/login")) ),
         ]
     )
 
@@ -63,7 +66,15 @@ def create_nav_top(page):
         margin=ft.margin.only(top=20) 
         
     )
+    def ModificarJson():
+        data_folder = os.path.join(os.getcwd(), "Data")
 
+        file_path = os.path.join(data_folder, "active.json")
+        with open(file_path, 'w') as file:
+                json.dump({"active": False}, file)
+                print("se modifico el estado del json")  
+
+ 
     # Devolver el contenedor
     return nav_top_container
 
