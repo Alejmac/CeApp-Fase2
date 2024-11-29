@@ -5,7 +5,7 @@ from View.nav_bar_View import create_nav_bar
 from ViewModel.quialifications_ViewModel import QualificationsViewModel  
 import os
 
-def create_collection_container(materia, primer_parcial, segundo_parcial, tercer_parcial, collection, index):
+def create_collection_container(materia, primer_parcial, segundo_parcial, tercer_parcial,falta_para_70, collection, index):
     subtitle = Text(f"{materia}", size=9, weight="bold", color=ft.colors.BLACK)   
 
     
@@ -40,7 +40,7 @@ def create_collection_container(materia, primer_parcial, segundo_parcial, tercer
             border=ft.border.all(1, "#1A74AF")
         ),        
         Container(
-            content=Text(f"suma", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
+            content=Text(f"{falta_para_70}", size=10,color=ft.colors.BLACK),  # Mostrar solo el valor
             padding=ft.padding.all(15),   
             bgcolor=ft.colors.WHITE,  
             alignment=ft.alignment.center,   
@@ -107,11 +107,12 @@ def QualificationsView(page: Page):
     primer_parcial = view_model.get_primer_parcial()
     segundo_parcial = view_model.get_segundo_parcial()
     tercer_parcial = view_model.get_tercer_parcial()
+    falta_para_70 = view_model.get_falta_para_70()
     schedule = view_model.get_schedule()
 
     # Crear los contenedores para cada colección de calificaciones, omitiendo el ultimo
     collection_containers = [
-        create_collection_container(materias[i], primer_parcial[i], segundo_parcial[i], tercer_parcial[i], schedule.get(materias[i], {}), i)
+        create_collection_container(materias[i], primer_parcial[i], segundo_parcial[i], tercer_parcial[i],falta_para_70[i], schedule.get(materias[i], {}), i)
         for i in range(len(materias) - 1)
     ]
 

@@ -20,6 +20,7 @@ class QualificationsViewModel:
         self.primer_parcial = []
         self.segundo_parcial = []
         self.tercer_parcial = []
+        self.falta_para_70 = []
         self.extract_data()
 
     def load_data(self):
@@ -31,10 +32,12 @@ class QualificationsViewModel:
             primer_parcial = collection.get("1ER. PARCIAL (Calf. Captura)", "N/A")
             segundo_parcial = collection.get("2DO. PARCIAL (Calf. Captura)", "N/A")
             tercer_parcial = collection.get("3ER. PARCIAL (Calf. Captura)", "N/A")
+            falta_para_70 = collection.get("Falta para 70", "N/A")
             self.materias.append(materia)
             self.primer_parcial.append(primer_parcial)
             self.segundo_parcial.append(segundo_parcial)
             self.tercer_parcial.append(tercer_parcial)
+            self.falta_para_70.append(falta_para_70)
 
     def get_schedule(self):
         return self.data
@@ -50,6 +53,8 @@ class QualificationsViewModel:
 
     def get_tercer_parcial(self):
         return self.tercer_parcial
+    def get_falta_para_70(self):
+        return self.falta_para_70
 
 # Ejemplo de uso
 #if __name__ == "__main__":
